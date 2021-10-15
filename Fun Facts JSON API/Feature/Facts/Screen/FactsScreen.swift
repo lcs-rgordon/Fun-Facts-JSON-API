@@ -9,46 +9,31 @@ import SwiftUI
 
 struct FactsScreen: View {
     
+    @StateObject private var vm = FactsViewModelImpl(
+        service: FactsServiceImpl()
+    )
     
     var body: some View {
         
-        List {
-            ForEach(Fact.dummyData, id: \.cat) { item in
-                VStack(alignment: .leading,
-                       spacing: 8) {
-                    HStack {
-                        Image(systemName: "tv")
-                            .font(.system(size: 12, weight: .black))
-                        Text(item.cat)
-                    }
-                    
-                    Text(makeAttributedString(title:"Cat", label: item.cat))
-                    Text(makeAttributedString(title:"Facts", label: item.fact))
-                        .lineLimit(2)
+        if vm.facts.isEmpty {
+            VStack(spacing: 8) {
+                LoadingView(text: "Fetching Fun Facts")
+            }
+        } else {
+            List {
+                ForEach(vm.facts, id: \.cat) { item in
+                    FactView(item: item)
                 }
-                .padding()
-                .foregroundColor(.black)
+            }
+            .task {
+                await vm.getRandomFacts()
             }
         }
     }
     
-    private func makeAttributedString(title: String, label: String) -> AttributedString {
-        
-        var string = AttributedString("\(title): \(label)")
-        string.foregroundColor = .black
-        string.font = .system(size: 16, weight: .bold)
-        
-        if let range = string.range(of: label) {
-            string[range].foregroundColor = .black.opacity(0.0)
-            string[range].font = .system(size: 16, weight: .regular)
-            
+    struct FactsScreen_Previews: PreviewProvider {
+        static var previews: some View {
+            FactsScreen()
         }
-        return string
-    }
-}
-
-struct FactsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        FactsScreen()
     }
 }

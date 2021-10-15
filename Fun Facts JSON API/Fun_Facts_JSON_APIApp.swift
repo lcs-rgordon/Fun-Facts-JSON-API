@@ -11,7 +11,7 @@ import SwiftUI
 struct Fun_Facts_JSON_APIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FactsScreen()
         }
     }
 }
