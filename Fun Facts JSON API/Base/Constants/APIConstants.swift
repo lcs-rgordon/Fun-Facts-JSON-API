@@ -9,5 +9,5 @@ import Foundation
 
 
 enum APIConstants {
-    static let baseUrl = "https://asli-fun-fact-api.herokuapp.com/"
+    static let baseUrl = "https://asli-fun-fact-api.herokuapp.com"
 }
