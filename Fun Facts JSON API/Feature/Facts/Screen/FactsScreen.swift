@@ -14,20 +14,22 @@ struct FactsScreen: View {
     )
     
     var body: some View {
-        
-        if vm.facts.isEmpty {
-            VStack(spacing: 8) {
-                LoadingView(text: "Fetching Fun Facts")
-            }
-        } else {
-            List {
-                ForEach(vm.facts, id: \.cat) { item in
-                    FactView(item: item)
+
+        VStack {
+            if vm.facts.isEmpty {
+                VStack(spacing: 8) {
+                    LoadingView(text: "Fetching Fun Facts")
+                }
+            } else {
+                List {
+                    ForEach(vm.facts, id: \.cat) { item in
+                        FactView(item: item)
+                    }
                 }
             }
-            .task {
-                await vm.getRandomFacts()
-            }
+        }
+        .task {
+            await vm.getRandomFacts()
         }
     }
     

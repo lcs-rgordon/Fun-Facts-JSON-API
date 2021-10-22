@@ -15,13 +15,13 @@ struct Fact: Decodable {
     let hits: String
 }
 
+struct Response: Decodable {
+    let status: Bool
+    let data: Fact
+}
+
 extension Fact {
     
-    static let dummyData: [Fact] = [
-        Fact(id: "id 1", fact: "Random Fact 1", cat: "cat 1", hits: "hits 1"),
-        Fact(id: "id 2", fact: "Random Fact 2", cat: "cat 2", hits: "hits 2"),
-        Fact(id: "id 3", fact: "Random Fact 3", cat: "cat 3", hits: "hits 3"),
-        Fact(id: "id 4", fact: "Random Fact 4", cat: "cat 4", hits: "hits 4"),
-        Fact(id: "id 5", fact: "Random Fact 5", cat: "cat 5", hits: "hits 5")
-    ]
+    static let dummyData = Fact(id: "1", fact: "The approximate value of pi is 3.14.", cat: "Math", hits: "177")
+    
 }

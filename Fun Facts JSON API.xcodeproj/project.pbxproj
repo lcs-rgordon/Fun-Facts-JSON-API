@@ -15,8 +15,8 @@
 		0FAFB5812718600800B780F8 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFB5802718600800B780F8 /* APIConstants.swift */; };
 		0FAFB5862718607F00B780F8 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFB5852718607F00B780F8 /* Fact.swift */; };
 		0FAFB5892718648000B780F8 /* FactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFB5882718648000B780F8 /* FactsScreen.swift */; };
-		0FAFB58C27186C2600B780F8 /* FactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFB58B27186C2600B780F8 /* FactView.swift */; };
 		0FAFB58F27186E0800B780F8 /* FactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFB58E27186E0800B780F8 /* FactsService.swift */; };
+		817CF7F027232B2600BCC99E /* FactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817CF7EF27232B2600BCC99E /* FactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		0FAFB5802718600800B780F8 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		0FAFB5852718607F00B780F8 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		0FAFB5882718648000B780F8 /* FactsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsScreen.swift; sourceTree = "<group>"; };
-		0FAFB58B27186C2600B780F8 /* FactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactView.swift; sourceTree = "<group>"; };
 		0FAFB58E27186E0800B780F8 /* FactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsService.swift; sourceTree = "<group>"; };
+		817CF7EF27232B2600BCC99E /* FactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 		0FAFB58A27186C0D00B780F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0FAFB58B27186C2600B780F8 /* FactView.swift */,
+				817CF7EF27232B2600BCC99E /* FactView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FAFB58C27186C2600B780F8 /* FactView.swift in Sources */,
+				817CF7F027232B2600BCC99E /* FactView.swift in Sources */,
 				0FAFB5892718648000B780F8 /* FactsScreen.swift in Sources */,
 				0FAFB58F27186E0800B780F8 /* FactsService.swift in Sources */,
 				0F4546382719A69B0052DD7C /* FactsViewModel.swift in Sources */,

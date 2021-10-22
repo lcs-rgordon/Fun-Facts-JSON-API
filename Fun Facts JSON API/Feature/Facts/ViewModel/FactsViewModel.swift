@@ -24,7 +24,12 @@ final class FactsViewModelImpl: FactsViewModel {
     
     func getRandomFacts() async {
         do {
-            self.facts = try await service.fetchRandomFacts()
+            // Get the response
+            let response = try await service.fetchRandomFacts()
+            
+            // Take the fact out of the response and append it to the list of facts
+            facts.append(response.data)
+            
         } catch {
             print(error)
         }

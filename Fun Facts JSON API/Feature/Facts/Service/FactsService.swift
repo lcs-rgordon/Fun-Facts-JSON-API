@@ -9,16 +9,16 @@ import Foundation
 import SwiftUI
 
 protocol FactsService {
-    func fetchRandomFacts() async throws -> [Fact]
+    func fetchRandomFacts() async throws -> Response
 }
 
 
 final class FactsServiceImpl: FactsService {
     
-    func fetchRandomFacts() async throws -> [Fact] {
+    func fetchRandomFacts() async throws -> Response {
         let urlSession = URLSession.shared
         let url = URL(string: APIConstants.baseUrl.appending("/"))
         let (data, _) = try await urlSession.data(from: url!)
-        return try JSONDecoder().decode([Fact].self, from: data)
+        return try JSONDecoder().decode(Response.self, from: data)
     }
 }
